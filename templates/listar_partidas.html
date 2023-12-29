@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p>
+  <div class="button">
+    <a href="/mundiais/{{ano}}" style="text-decoration: none"><strong>Back</strong></a>
+  </div>
+</p>
+
+<p class="button2">
+    <a href="/mundiais/{{ano}}/partidas/detalhes" style="text-decoration: none"> <strong>Informações sobre as equipas de arbitragem</strong></a>
+</p>
+
+<h1><strong>Partidas de {{ ano }}</strong></h1>
+
+
+<table>
+  <tr>
+    <th>
+      Data/Hora
+    </th>
+    <th>
+      Estádio
+    </th>
+    <th>
+      Cidade
+    </th>
+    <th>
+      "Casa"
+    </th>
+    <th>
+      Golos da "Casa"
+    </th>
+    <th>
+      Golos de "Fora"
+    </th>
+    <th>
+      "Fora"
+    </th>
+    <th>
+      Espectadores
+    </th>
+  </tr>
+  {% for p in partidas %}
+  <tr>
+    <td> <strong>
+      <div id = "datas">
+        {{ p.data.replace("\"","")}}
+      </div></strong>
+    </td> 
+    <td>
+      <strong>{{ p.estadio.replace("\"","") }}</strong>
+    </td> 
+    <td>
+      <strong>{{ p.cidade.replace("\"","") }}</strong>
+    </td> 
+    <td>
+      <strong>{{ p.sigla_eqcasa }}</strong>
+    </td> 
+    <td>
+      <strong>{{ p.golos_eqcasa }}</strong>
+    </td> 
+    <td>
+      <strong>{{ p.golos_eqfora }}</strong>
+    </td>
+    <td>
+      <strong>{{ p.sigla_eqfora }}</strong>
+    </td>
+    <td>
+      <strong>{{ p.espectadores }}</strong>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+
+{% endblock %}

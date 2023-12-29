@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1><strong>Equipas</strong></h1>
+
+<table>
+  <tr>
+    <th>
+      Sigla
+    </th>
+    <th>
+      Nome
+    </th>
+    <th>
+      Nº de participações
+    </th>
+  </tr>
+  {% for e in equipas %}
+  <tr>
+    <td>
+      <a href="/equipas/{{ e.idSigla}}/"><strong>{{ e.idSigla }}</strong>
+    </td> 
+    <td>
+      <strong>{{ e.nome }}</strong>
+    </td>
+    <td>
+      <strong>{{ e.n_participacoes }}</strong>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+
+{% endblock %}

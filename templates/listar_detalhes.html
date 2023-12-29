@@ -1,0 +1,52 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p>
+  <div class="button">
+    <a href="/mundiais/{{ano}}/partidas" style="text-decoration: none"><strong>Back</strong></a>
+  </div>
+</p>
+
+
+<h1><strong>Equipas de Arbitragem</strong></h1>
+
+<table>
+  <tr>
+    <th>
+      <strong>Data/Hora</strong>
+    </th>
+    <th>
+      <strong>Árbitro principal</strong>
+    </th>
+    <th>
+      <strong>Assistente 1</strong>
+    </th>
+    <th>
+      <strong>Assistente 2</strong>
+    </th>
+  </tr>
+  {% for d in detalhes  %}
+  <tr>
+    <td><strong>
+      <div id = "datas">
+        {{d.data.replace("\"","")}}
+      </div>
+      
+    </td> 
+    <td>
+      <strong>{{ d.arbitro }}</strong>
+    </td> 
+    <td>
+      <strong>{{ d.assistente1 }}</strong>
+    </td> 
+    <td>
+      <strong>{{ d.assistente2 }}</strong>
+    </td> 
+  </tr>
+  {% endfor %}
+</table>
+
+
+{% endblock %}

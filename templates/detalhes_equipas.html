@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p>
+<div class="button">
+        <a href="/equipas/" style="text-decoration: none"><strong>Back</strong></a>
+</div>
+</p>
+
+
+<h1>{{detalhes.nome}}</h1>  <!-- Nome da equipa que estou a contar as participações -->
+
+
+<table>
+    <tr>
+            <td><strong>Primeiro lugar</strong></td>
+            <td>{{ detalhes.primeiro_lugar}}</td>
+    </tr>
+    <tr>
+            <td><strong>Segundo lugar</strong></td>
+            <td>{{ detalhes.segundo_lugar}}</td>
+    </tr>
+    <tr>
+            <td><strong>Terceiro lugar</strong></td>
+            <td>{{ detalhes.terceiro_lugar}}</td>
+    </tr>
+    <tr>
+            <td><strong>Quarto lugar</strong></td>
+            <td>{{ detalhes.quarto_lugar}}</td>
+    </tr>
+</table>
+
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p>
+  <div class="button">
+    <a href="/mundiais/{{ano}}" style="text-decoration: none"><strong>Back</strong></a>
+  </div>
+</p>
+
+<h1><strong>Equipas Participantes em {{ano}}</strong></h1>
+
+<table>
+  <tr>
+    <th>
+      Sigla
+    </th>
+    <th>
+      Nome
+    </th>
+    <th>
+      Golos marcados
+    </th>
+    <th>
+      Golos sofridos
+    </th>
+  </tr>
+  {% for p in participantes %}
+  <tr>
+    <td>
+      <strong>{{ p.idSigla }}</strong>
+    </td> 
+    <td>
+      <strong>{{ p.nome }}</strong>
+    </td>
+    <td>
+      <strong>{{ p.golos_marcados }}</strong>
+    </td>
+    <td>
+      <strong>{{ p.golos_sofridos }}</strong>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+
+{% endblock %}

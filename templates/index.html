@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--<p>
+  <br/>
+</p>-->
+
+<body>
+  
+  <h1><strong>Mundiais de Futebol(1930-2014)</strong></h1>
+  
+  
+  <table >
+    <tr>
+      <th>
+        <a href="/mundiais"><strong>Mundiais</strong></a>
+      </th>
+      <th>
+        <a href="/equipas"><strong>Equipas</strong></a>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{ stats.n_mundiais }}</strong>
+      </td>
+      <td>
+        <strong>{{ stats.n_equipas }}</strong>
+      </td>
+    </tr>
+  </table>
+  
+</body>
+
+
+
+{% endblock %}
